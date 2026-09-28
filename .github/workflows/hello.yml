@@ -36,6 +36,7 @@ jobs:
         run: echo "code tasted"
         
   doploy:
+    if: inputs.environment == 'pro'
     needs: test
     runs-on: ubuntu-latest
     steps:
