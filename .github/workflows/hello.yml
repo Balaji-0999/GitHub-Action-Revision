@@ -1,17 +1,9 @@
 name: CICD
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: this is env 
-        default: 'dev'
-        required: true
-        type: choice
-        options:
-          - dev
-          - pro
-          - staging
+  push:
+   branches: [main]
+  
 
 
 jobs:
