@@ -1,0 +1,32 @@
+name: CICD
+
+on:
+  push:
+  workflow_dispatch:
+
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code 
+        run: echo "code building"
+    
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Building code
+        run: echo "code built"
+      
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test code
+        run: echo "code tasted"
+  doploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "congratulation your app has been deployed"
+    
+  
