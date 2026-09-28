@@ -2,7 +2,9 @@ name: CICD
 
 on:
   push:
-   branches: [main]
+    branches: [main]
+  paths: 
+    - "**.html"
   
 
 
@@ -28,7 +30,6 @@ jobs:
         run: echo "code tasted"
         
   doploy:
-    if: inputs.environment == 'pro'
     needs: test
     runs-on: ubuntu-latest
     steps:
