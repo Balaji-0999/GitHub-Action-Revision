@@ -22,8 +22,8 @@ jobs:
       - name: Setup Pages
         run: actions/configure-pages@v4
 
-      - name: Upload static file
-        run: actions/upload-pages-artifact@v4
+      - name: Upload static files
+        uses: actions/upload-pages-artifact@v4
         with:
          path: .
 
