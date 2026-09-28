@@ -25,7 +25,7 @@ jobs:
       - name: Upload static file
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./kachi.html
+          path: .
 
       - name: Daeploy to Github page
         uses: actions/deploy-pages@v4
