@@ -1,0 +1,31 @@
+name: Portfolio
+
+on:
+ workflow_dispatch:
+permissions:
+      pages: write
+      id-token: write
+ 
+
+jobs:
+  Doploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: Github-pages 
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Code Checkout
+        run: actions/checkout@v4
+
+      - name: Setup Pages
+        run: actions/configure-pages@v4
+
+      - name: Upload static file
+        run: actions/upload-pages-artifact@v4
+        with:
+         path: .
+
+      - name: Doploy to Github page
+        run: actions/deploy-pages@v4
