@@ -1,0 +1,34 @@
+name: webapp
+
+on:
+  push:
+  
+permissions:
+    pages: write      # to deploy to Pages
+    id-token: write
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v6
+
+      - name: Setup page
+        uses: actions/configure-pagse@v5
+
+      - name: Upload static file
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./kachi.html
+
+      - name: Daeploy to Github page
+        uses: actions/deploy-pages@v4
+         
+
+  
