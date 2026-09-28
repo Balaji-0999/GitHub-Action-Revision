@@ -1,7 +1,6 @@
 name: CICD
 
 on:
-  push:
   workflow_dispatch:
 
 
@@ -13,17 +12,21 @@ jobs:
         run: echo "code building"
     
   build:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: Building code
         run: echo "code built"
       
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Test code
         run: echo "code tasted"
+        
   doploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
