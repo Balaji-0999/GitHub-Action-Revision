@@ -1,8 +1,7 @@
 name: webapp live
 
 on:
-  push:
-  
+  workflow_dispatch: 
 permissions:
     pages: write      # to deploy to Pages
     id-token: write
