@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup page
-        uses: actions/configure-pagse@v5
+        uses: actions/configure-pages@v5
 
       - name: Upload static file
         uses: actions/upload-pages-artifact@v4
